@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:weightSum="2">
+		<ImageView android:id="@+id/userPicture"
+			android:layout_width="100dp"
+			android:layout_height="100dp"/>
+		<LinearLayout android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView android:id="@+id/newUserCell_userName_textView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="15sp"
+				android:hint="Name"
+				android:layout_weight="1"/>
+			<TextView android:id="@+id/userAge"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="Age"
+				android:textSize="15sp"
+				android:layout_weight="1"/>
+			<TextView android:id="@+id/userId"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="ID"
+				android:textSize="15sp"
+				android:layout_weight="1"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

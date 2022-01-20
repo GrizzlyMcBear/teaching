@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "117909697764",
+    "project_id": "custom-adapter-fbb28",
+    "storage_bucket": "custom-adapter-fbb28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117909697764:android:ee576be03e46f14da6a8f1",
+        "android_client_info": {
+          "package_name": "com.example.firebasecustomadapter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117909697764-4qfd1acvf046nb5pf42gg8tq4s3etcos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoH4IAgbPT6vTLxdgCuCoV-87-h0vrUdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117909697764-4qfd1acvf046nb5pf42gg8tq4s3etcos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

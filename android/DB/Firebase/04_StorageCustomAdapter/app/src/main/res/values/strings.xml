@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">Firebase Strg Cstm Adptr</string>
+	
+	<!-- Main Activity (start) -->
+	
+	<string name="create_users_button">Create Users</string>
+	<string name="take_picture_button">Take Picture</string>
+	<string name="user_age_hint">User age</string>
+	
+	<!-- Main Activity (start) -->
+	
+</resources>

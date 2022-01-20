@@ -1,0 +1,141 @@
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.android.material.badge;
+
+import com.google.android.material.R;
+
+import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
+import static com.google.android.material.badge.BadgeUtils.updateBadgeBounds;
+
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
+import androidx.core.view.ViewCompat;
+import android.util.AttributeSet;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
+import androidx.annotation.AttrRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.Dimension;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.PluralsRes;
+import androidx.annotation.RestrictTo;
+import androidx.annotation.StringRes;
+import androidx.annotation.StyleRes;
+import androidx.annotation.StyleableRes;
+import androidx.annotation.XmlRes;
+import com.google.android.material.drawable.DrawableUtils;
+import com.google.android.material.internal.TextDrawableHelper;
+import com.google.android.material.internal.TextDrawableHelper.TextDrawableDelegate;
+import com.google.android.material.internal.ThemeEnforcement;
+import com.google.android.material.resources.MaterialResources;
+import com.google.android.material.resources.TextAppearance;
+import com.google.android.material.shape.MaterialShapeDrawable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.ref.WeakReference;
+import java.text.NumberFormat;
+
+/**
+ * {@code BadgeDrawable} contains all the layout and draw logic for a badge.
+ *
+ * <p>You can use {@code BadgeDrawable} to display dynamic information such as a number of pending
+ * requests in a {@link com.google.android.material.bottomnavigation.BottomNavigationView}. To
+ * create an instance of {@code BadgeDrawable}, use {@link #create(Context)} or {@link
+ * #createFromResources(Context, int)}. How to add and display a {@code BadgeDrawable} on top of its
+ * anchor view depends on the API level:
+ *
+ * <p>For API 18+ (APIs supported by {@link android.view.ViewOverlay})
+ *
+ * <ul>
+ *   <li>Add {@code BadgeDrawable} as a {@link android.view.ViewOverlay} to the desired anchor view
+ *       using BadgeUtils#attachBadgeDrawable(BadgeDrawable, View, FrameLayout) (This helper class
+ *       is currently experimental).
+ *   <li>Update the {@code BadgeDrawable BadgeDrawable's} coordinates (center and bounds) based on
+ *       its anchor view using {@link #updateBadgeCoordinates(View, FrameLayout)}.
+ * </ul>
+ *
+ * <pre>
+ * BadgeDrawable badgeDrawable = BadgeDrawable.create(context);
+ * badgeDrawable.setVisible(true);
+ * BadgeUtils.attachBadgeDrawable(badgeDrawable, anchor);
+ * </pre>
+ *
+ * <p>For Pre API-18
+ *
+ * <ul>
+ *   <li>Set {@code BadgeDrawable} as the foreground of the anchor view's {@code FrameLayout}
+ *       ancestor using {@link BadgeUtils#attachBadgeDrawable(BadgeDrawable, View, FrameLayout)}
+ *       (This helper class is currently experimental).
+ *   <li>Update the {@code BadgeDrawable BadgeDrawable's} coordinates (center and bounds) based on
+ *       its anchor view (relative to its {@code FrameLayout} ancestor's coordinate space), using
+ *       {@link #updateBadgeCoordinates(View, FrameLayout)}.
+ * </ul>
+ *
+ * Option 1: {@code BadgeDrawable} will dynamically create and wrap the anchor view in a {@code
+ * FrameLayout}, then insert the {@code FrameLayout} into the anchor view original position in the
+ * view hierarchy. Same syntax as API 18+
+ *
+ * <pre>
+ * BadgeDrawable badgeDrawable = BadgeDrawable.create(context);
+ * badgeDrawable.setVisible(true);
+ * BadgeUtils.attachBadgeDrawable(badgeDrawable, anchor);
+ * </pre>
+ *
+ * Option 2: If you do not want {@code BadgeDrawable} to modify your view hierarchy, you can specify
+ * a {@code FrameLayout} to display the badge instead.
+ *
+ * <pre>
+ * BadgeDrawable badgeDrawable = BadgeDrawable.create(context);
+ * BadgeUtils.attachBadgeDrawable(badgeDrawable, anchor, anchorFrameLayoutParent);
+ * </pre>
+ *
+ * <p>By default, {@code BadgeDrawable} is aligned to the top and end edges of its anchor view (with
+ * some offsets). Call {@link #setBadgeGravity(int)} to change it to one of the other supported
+ * modes. To adjust the badge's offsets w.r.t. the anchor's center, use {@link
+ * BadgeDrawable#setHoriziontalOffset(int)}, {@link BadgeDrawable#setVerticalOffset(int)}
+ *
+ * <p>Note: This is still under development and may not support the full range of customization
+ * Material Android components generally support (e.g. themed attributes).
+ */
+public class BadgeDrawable extends Drawable implements TextDrawableDelegate {
+
+  /** Position the badge can be set to. */
+  @IntDef({
+    TOP_END,
+    TOP_START,
+    BOTTOM_END,
+    BOTTOM_START,
+  })
+  @Retention(RetentionPolicy.SOURCE)
+  public @interface BadgeGravity {}
+
+  /** The badge is positioned a

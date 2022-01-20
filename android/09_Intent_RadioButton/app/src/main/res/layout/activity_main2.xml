@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity2">
+
+    <TextView android:id="@+id/my_points_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_points"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
+    <Button android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <TextView android:text="What is your favorite color?"
+        android:textSize="@dimen/question_textSize"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton android:id="@+id/group1answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Red"/>
+
+        <RadioButton android:id="@+id/group1answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Blue"/>
+
+        <RadioButton android:id="@+id/group1answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Aquamarine"/>
+
+        <RadioButton android:id="@+id/group1answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Yellow"/>
+
+    </RadioGroup>
+
+    <TextView android:text="What is the capital of Assyria?"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton android:id="@+id/group2answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Jerusalem"/>
+
+        <RadioButton android:id="@+id/group2answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Paris"/>
+
+        <RadioButton android:id="@+id/group2answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Allepo"/>
+
+        <RadioButton android:id="@+id/group2answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/answer_textSize"
+            android:text="Nineveh"/>
+
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <!-- Talk about `android:visibility` -->
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <EditText android:id="@+id/sendMsgET"
+            style="@style/NewEditText"
+            android:hint="Enter e-mail address"
+            android:inputType="textEmailAddress"/>
+
+        <Button android:id="@+id/sendMsgBtn"
+            style="@style/NewButtonStyle"
+            android:text="Send" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <EditText android:id="@+id/browseAddressET"
+            style="@style/NewEditText"
+            android:hint="Enter site address"
+            android:inputType="textWebEditText" />
+
+        <Button android:id="@+id/browseBtn"
+            style="@style/NewButtonStyle"
+            android:text="Browse" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <EditText android:id="@+id/dialET"
+            style="@style/NewEditText"
+            android:hint="Enter a phone number"
+            android:inputType="phone" />
+
+        <Button android:id="@+id/dialBtn"
+            style="@style/NewButtonStyle"
+            android:text="Dial" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <EditText android:id="@+id/latitudeET"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:hint="Latitude" />
+
+        <EditText android:id="@+id/longitudeET"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:hint="Longtitude" />
+
+        <Button android:id="@+id/mapNavBtn"
+            style="@style/NewButtonStyle"
+            android:text="Map" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <Button android:id="@+id/showContactsBtn"
+            style="@style/NewButtonStyle"
+            android:text="Show Contacts"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <EditText android:id="@+id/wazeLatitudeET"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:hint="Latitude" />
+
+        <EditText android:id="@+id/wazeLongitudeET"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:hint="Longtitude" />
+
+        <Button android:id="@+id/wazeNavBtn"
+            style="@style/NewButtonStyle"
+            android:text="Waze" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/NewLinearLayout">
+
+        <EditText android:id="@+id/whatsappMsgET"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:hint="Enter Message" />
+
+        <EditText android:id="@+id/whatsappNumberET"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:hint="Enter number"
+            android:inputType="phone" />
+
+        <Button android:id="@+id/whatsappBtn"
+            style="@style/NewEditText"
+            android:layout_weight="1"
+            android:text="whatsapp" />
+
+    </LinearLayout>
+
+</LinearLayout>

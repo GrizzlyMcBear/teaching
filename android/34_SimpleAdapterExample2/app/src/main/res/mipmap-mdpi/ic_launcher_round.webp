@@ -1,0 +1,46 @@
+/*
+ * Copyright 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package androidx.fragment.app;
+
+import android.os.Parcelable;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager.widget.PagerAdapter;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+/**
+ * Implementation of {@link PagerAdapter} that
+ * represents each page as a {@link Fragment} that is persistently
+ * kept in the fragment manager as long as the user can return to the page.
+ *
+ * <p>This version of the pager is best for use when there are a handful of
+ * typically more static fragments to be paged through, such as a set of tabs.
+ * The fragment of each page the user visits will be kept in memory, though its
+ * view hierarchy may be destroyed when not visible.  This can result in using
+ * a significant amount of memory since fragment instances can hold on to an
+ * arbitrary amount of state.  For larger sets of pages, consider
+ * {@link FragmentStatePagerAdapter}.
+ *
+ * <p>When using FragmentPagerAdapter

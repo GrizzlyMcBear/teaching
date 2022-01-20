@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_login"
+        android:title="Login"
+        android:orderInCategory="100"
+        android:icon="@drawable/world"
+        />
+
+    <item
+        android:id="@+id/item2"
+        android:title="Set Time"
+        android:icon="@drawable/clock"
+        android:orderInCategory="200"/>
+
+    <item
+        android:id="@+id/item3"
+        android:title="Equality"
+        android:icon="@drawable/equals"
+        android:orderInCategory="300"/>
+
+    <item
+        android:id="@+id/item4"
+        android:title="Menu Item 4"
+        android:orderInCategory="400"/>
+
+
+
+</menu>

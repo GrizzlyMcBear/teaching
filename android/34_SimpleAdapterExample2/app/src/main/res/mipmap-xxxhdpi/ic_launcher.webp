@@ -1,0 +1,95 @@
+/*
+ * Copyright (C) 2011 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package androidx.core.accessibilityservice;
+
+import android.accessibilityservice.AccessibilityService;
+import android.accessibilityservice.AccessibilityServiceInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+/**
+ * Helper for accessing features in {@link AccessibilityServiceInfo}.
+ */
+public final class AccessibilityServiceInfoCompat {
+    /**
+     * Capability: This accessibility service can retrieve the active window content.
+     */
+    public static final int CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT = 0x00000001;
+
+    /**
+     * Capability: This accessibility service can request touch exploration mode in which
+     * touched items are spoken aloud and the UI can be explored via gestures.
+     */
+    public static final int CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION = 0x00000002;
+
+    /**
+     * Capability: This accessibility service can request enhanced web accessibility
+     * enhancements. For example, installing scripts to make app content more accessible.
+     */
+    public static final int CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY = 0x00000004;
+
+    /**
+     * Capability: This accessibility service can filter the key event stream.
+     */
+    public static final int CAPABILITY_CAN_FILTER_KEY_EVENTS = 0x00000008;
+
+    // Feedback types
+
+    /**
+     * Denotes braille feedback.
+     */
+    public static final int FEEDBACK_BRAILLE = 0x0000020;
+
+    /**
+     * Mask for all feedback types.
+     *
+     * @see AccessibilityServiceInfo#FEEDBACK_SPOKEN
+     * @see AccessibilityServiceInfo#FEEDBACK_HAPTIC
+     * @see AccessibilityServiceInfo#FEEDBACK_AUDIBLE
+     * @see AccessibilityServiceInfo#FEEDBACK_VISUAL
+     * @see AccessibilityServiceInfo#FEEDBACK_GENERIC
+     * @see AccessibilityServiceInfo#FEEDBACK_BRAILLE
+     */
+    public static final int FEEDBACK_ALL_MASK = 0xFFFFFFFF;
+
+    // Flags
+
+    /**
+     * If this flag is set the system will regard views that are not important
+     * for accessibility in addition to the ones that are important for accessibility.
+     * That is, views that are marked as not important for accessibility via
+     * {@link View#IMPORTANT_FOR_ACCESSIBILITY_NO} or
+     * {@link View#IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS} and views that are
+     * marked as potentially important for accessibility via
+     * {@link View#IMPORTANT_FOR_ACCESSIBILITY_AUTO} for which the system has determined
+     * that are not important for accessibility, are both reported while querying the
+     * window content and also the accessibility service will receive accessibility events
+     * from them.
+     * <p>
+     * <strong>Note:</strong> For accessibility services targeting API version
+     * {@link Build.VERSION_CODES#JELLY_BEAN} or higher this flag has to be explicitly
+     * set for the system to regard views that are not important for accessibility. For
+     * accessibility services targeting API version lower than
+     * {@link Build.VERSION_CODES#JELLY_BEAN} this flag is ignored and all views are
+     * regarded for accessibility purposes.
+     * </p>
+     * <p>
+     * Usually views not important for accessibil

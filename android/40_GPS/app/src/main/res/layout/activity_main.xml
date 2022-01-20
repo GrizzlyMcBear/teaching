@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".MainActivity">
+	<LinearLayout style="@style/LinearLayout">
+		<Button android:id="@+id/location_updates_registration"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="start location updates"/>
+		<Button android:id="@+id/location_updates_remove"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="stop location updates"/>
+	</LinearLayout>
+	<LinearLayout style="@style/LinearLayout.Horizontal">
+		<TextView style="@style/TextView"
+			android:text="Location:"/>
+		<TextView android:id="@+id/current_coordinates"
+			style="@style/TextView.Updated"
+			android:hint="Fetching data..."/>
+	</LinearLayout>
+	<LinearLayout style="@style/LinearLayout.Horizontal">
+		<TextView style="@style/TextView"
+			android:text="Address:"/>
+		<TextView android:id="@+id/current_address"
+			style="@style/TextView.Updated"
+			android:hint="Detecting..."/>
+	</LinearLayout>
+</LinearLayout>

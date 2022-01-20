@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <EditText android:id="@+id/responseET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="61dp"
+        android:layout_toRightOf="@+id/responseTV"
+        android:ems="10"/>
+
+    <TextView android:id="@+id/responseTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/responseET"
+        android:layout_alignBottom="@+id/responseET"
+        android:layout_alignParentLeft="true"
+        android:text="Enter Message:"/>
+
+    <Button android:id="@+id/navBackScreenBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/responseET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:text="Submit"
+        android:textAllCaps="false"/>
+
+    <TextView android:id="@+id/prevScreenInputTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navBackScreenBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text=""/>
+
+    <TextView android:id="@+id/userDataTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prevScreenInputTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>

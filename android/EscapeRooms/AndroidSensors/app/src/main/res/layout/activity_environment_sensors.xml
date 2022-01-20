@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EnvironmentSensorsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_environmentSensorsScreen"
+            android:gravity="center"
+            android:textSize="25dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Switch android:id="@+id/toggleExistingSensorsSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentTop="true"
+            android:onClick="onClick_toggleVisibility"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/toggleExistingSensorsSwitch"
+            android:text="Existing environment sensors:"/>
+        <TextView android:id="@+id/availableSensorsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toggleExistingSensorsSwitch"
+            android:layout_below="@+id/toggleExistingSensorsSwitch"
+            android:visibility="gone"
+            android:hint="Searching..."/>
+    </RelativeLayout>
+
+    <LinearLayout android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper">
+            <TextView style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.DescriptionTextView"
+                android:text="Ambient Temperature (°C): "/>
+            <TextView android:id="@+id/ambientTempTextView"
+                style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.MeasurementTextView"
+                android:hint="Measuring..."/>
+        </LinearLayout>
+        <LinearLayout style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper">
+            <TextView style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.DescriptionTextView"
+                android:text="Ambient Air Pressure (hPa / mbar): "/>
+            <TextView android:id="@+id/ambientAirPressureTextView"
+                style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.MeasurementTextView"
+                android:hint="Measuring..."/>
+        </LinearLayout>
+        <LinearLayout style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper">
+            <TextView style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.DescriptionTextView"
+                android:text="Ambient Relative Humidity (%): "/>
+            <TextView android:id="@+id/ambientRelaviteHumidityTextView"
+                style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.MeasurementTextView"
+                android:hint="Measuring..."/>
+        </LinearLayout>
+        <LinearLayout style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper">
+            <TextView style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.DescriptionTextView"
+                android:text="Device Temperature (°C): "/>
+            <TextView android:id="@+id/deviceTempTextView"
+                style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.MeasurementTextView"
+                android:hint="Measuring..."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper">
+        <TextView style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.DescriptionTextView"
+            android:text="Light level (lux): "/>
+        <TextView android:id="@+id/lightLevelTextView"
+            style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.MeasurementTextView"
+            android:hint="Measuring..."/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper"
+        android:orientation="vertical">
+        <TextView style="@style/Theme.AndroidSensorLegacy.SensorActivity.SensorLayoutWrapper.DescriptionTextView"
+            android:text="Existing data: "/>
+        <Button android:id="@+id/fetchChannelDataButton"
+            android:onClick="onClick_fetchChannelData"
+            android:text="Fetch Channel Data"
+            style="@style/Theme.AndroidSensorLegacy.MainActivity.Button"/>
+        <ProgressBar android:id="@+id/fetchDataProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/dataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

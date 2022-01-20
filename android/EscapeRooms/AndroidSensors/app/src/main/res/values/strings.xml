@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Android Sensors</string>
+
+    <!-- Screen Titles -->
+    <string name="title_environmentSensorsScreen">Environment Sensors</string>
+    <string name="title_soundSensorsScreen">Sound Sensors</string>
+    <string name="title_pressureSensorsScreen">Pressure Sensors</string>
+
+    <!-- Buttons -->
+    <string name="button_environmentSensors">Environment Sensors Screen</string>
+    <string name="button_soundSensor">Sound Sensor Screen</string>
+
+    <!-- KV Pairs -->
+
+</resources>

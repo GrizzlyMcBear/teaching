@@ -21,3 +21,43 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# IDE ignore rules
+# ================
+
+# Eclipse
+# =======
+**/.metadata
+**/.metadata/**
+**/.project
+**/.settings/**
+**/students/**
+
+# Visual Studio (2019)
+# ====================
+**/.vs
+**/bin
+**/obj
+**/*.csproj
+**/*.sln
+
+# IntelliJ and Android Studio
+# ===========================
+**/.idea
+**/.idea/**
+**/*.iml
+**/local.properties
+**/app/src/main/res/values/*.xml
+
+# Gradle
+**/build.gradle
+**/gradle.properties
+**/gradle/**
+**/gradlew
+**/gradlew.bat
+**/settings.gradle
+
+**/*.pro
+**/app/src/main/res/mipmap-*/**
+
+**/.gitignore

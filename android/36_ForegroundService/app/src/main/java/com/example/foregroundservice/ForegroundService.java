@@ -9,9 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-public class ForgeoundService extends Service {
+public class ForegroundService extends Service {
 	
-	public ForgeoundService() {
+	public ForegroundService() {
 	}
 	
 	final int NOTIFY_ID = 1;

@@ -1,13 +1,12 @@
-package eclipse.teaching.java.adt.stack.questions.mine;
+package teaching.java.adt.stack.questions.mine;
 
 import java.util.Scanner;
-
-import eclipse.utilities.adt.moe.Stack;
+import utilities.adt.moe.Stack;
 
 public class Question01 {
 
 	/**
-	 * @author Ronen Cohen
+	 * @author Grizzly McBear
 	 * @implNote This method reads a user input text (line), reverses it and then
 	 * prints it using `syso`. It implements the solution for the question located
 	 * <a href="https://docs.google.com/document/d/1KPUQBaA16m296SG6L7m4-c7B87tDjCuE3OyFcm1E10I/edit#heading=h.7guyxwi9mwei">here.</a>

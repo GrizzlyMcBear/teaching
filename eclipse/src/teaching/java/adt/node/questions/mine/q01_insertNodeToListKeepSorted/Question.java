@@ -1,8 +1,7 @@
-package eclipse.teaching.java.adt.node.questions.mine.q01_insertNodeToListKeepSorted;
+package teaching.java.adt.node.questions.mine.q01_insertNodeToListKeepSorted;
 
 import java.util.Scanner;
-
-import eclipse.utilities.adt.moe.Node;
+import utilities.adt.moe.Node;
 
 /** 
  * @author GrizzlyMcBear

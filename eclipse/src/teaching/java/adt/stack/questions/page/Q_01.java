@@ -1,6 +1,6 @@
-package eclipse.teaching.java.adt.stack.questions.page;
+package teaching.java.adt.stack.questions.page;
 
-import eclipse.utilities.adt.moe.Stack;
+import utilities.adt.moe.Stack;
 
 /** Copy of the code in question 1 of 
  * <a href="https://docs.google.com/document/d/1KPUQBaA16m296SG6L7m4-c7B87tDjCuE3OyFcm1E10I/edit#heading=h.yfhw5rz11jzk">this</a> page.

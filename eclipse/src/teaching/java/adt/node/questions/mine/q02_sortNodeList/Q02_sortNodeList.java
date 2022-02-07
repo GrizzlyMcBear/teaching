@@ -1,5 +1,5 @@
-package eclipse.teaching.java.adt.node.questions.mine.q02_sortNodeList;
-import eclipse.utilities.adt.moe.Node;
+package teaching.java.adt.node.questions.mine.q02_sortNodeList;
+import utilities.adt.moe.Node;
 
 /** TBD: implement this class and its methods. */
 public class Q02_sortNodeList {

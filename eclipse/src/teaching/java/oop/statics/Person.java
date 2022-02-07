@@ -1,9 +1,9 @@
-package eclipse.teaching.java.oop.statics;
+package teaching.java.oop.statics;
 
 /**
  * A class representing a person for the purpose of showing the difference between
  * static/non-static field/method
- * @author Ronen Cohen
+ * @author Grizzly McBear
  */
 public class Person {
 

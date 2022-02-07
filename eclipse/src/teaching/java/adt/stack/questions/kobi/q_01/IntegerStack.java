@@ -1,8 +1,8 @@
-package eclipse.teaching.java.adt.stack.questions.kobi.q_01;
+package teaching.java.adt.stack.questions.kobi.q_01;
 
 /**
  * 
- * @author Ronen Cohen
+ * @author GrizzlyMcBear
  * 
  * @implSpec in order to test this class, copy the following code to main:
  		

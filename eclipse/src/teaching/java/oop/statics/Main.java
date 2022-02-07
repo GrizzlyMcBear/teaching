@@ -1,4 +1,4 @@
-package eclipse.teaching.java.oop.statics;
+package teaching.java.oop.statics;
 
 public class Main {
 

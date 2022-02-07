@@ -1,9 +1,9 @@
-package eclipse.teaching.java.oop.inheritance.questions.q_02;
+package teaching.java.oop.inheritance.questions.q_02;
 
 /**
  * This class represents a cat as requested in 
  * <a href="https://86d98cb5-ca6b-4f81-9ecd-6350645ed93b.filesusr.com/ugd/0535b1_c73d41b9a455420f9a7f93a66b3d2085.pptx?dn=01-%20inheritance.pptx">this question</a>.
- * @author Ronen Cohen
+ * @author Grizzly McBear
  * @author Zohar Asif
  */
 public class Cat {

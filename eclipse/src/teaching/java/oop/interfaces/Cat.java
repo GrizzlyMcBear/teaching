@@ -1,4 +1,4 @@
-package eclipse.teaching.java.oop.interfaces;
+package teaching.java.oop.interfaces;
 
 import java.time.Duration;
 

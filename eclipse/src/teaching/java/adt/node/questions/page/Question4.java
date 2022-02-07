@@ -1,6 +1,6 @@
-package eclipse.teaching.java.adt.node.questions.page;
+package teaching.java.adt.node.questions.page;
 import java.util.Random;
-import eclipse.utilities.adt.moe.*;
+import utilities.adt.moe.*;
 
 public class Question4 {
 	

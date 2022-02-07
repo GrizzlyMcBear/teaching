@@ -1,4 +1,4 @@
-package eclipse.teaching.java.oop.interfaces;
+package teaching.java.oop.interfaces;
 
 public class Chicken extends Animal implements ILayable {
 

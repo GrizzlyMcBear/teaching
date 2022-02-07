@@ -1,11 +1,10 @@
-package eclipse.teaching.java.adt.node.questions.page;
-import eclipse.utilities.adt.moe.*;
+package teaching.java.adt.node.questions.page;
+import utilities.adt.moe.*;
 
 /**
  * Write a program which would get a list of nodes and a number.
  * then it would calculate the amount of sequences of that number in that list.  
- * @author ASUS
- * 
+ * @author GrizzlyMcBear
  */
 public class Question5 {
 	

@@ -1,4 +1,4 @@
-package eclipse.teaching.java.runtime_complexity.page1;
+package teaching.java.runtime_complexity.page1;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -10,7 +10,7 @@ import java.util.Random;
  * 		(each grade is an int in the range [0, 100].</br>
  * 		This method would return the grades' median.</li>
  * 	</ul>
- * @author Ronen Cohen
+ * @author Grizzly McBear
  */
 public class Question10 {
 

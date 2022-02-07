@@ -5,6 +5,7 @@ public class Main {
 	private static final int NUMBERS_AMOUNT = 10;
 	
 	public static void main(String[] args) {
+//		example1();
 		example2();
 	}
 	

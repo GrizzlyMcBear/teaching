@@ -1,4 +1,4 @@
-package eclipse.tests.exams.internal._2022_01_27.Question1;
+package tests.exams.internal._2022_01_27.Question1;
 
 public class Point {
 

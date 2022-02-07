@@ -1,5 +1,5 @@
-package eclipse.teaching.java.adt.node.questions.page;
-import eclipse.utilities.adt.moe.*;
+package teaching.java.adt.node.questions.page;
+import utilities.adt.moe.*;
 
 /* Write a program which receives a reference to the first node in a node list
  * and an `int` n.

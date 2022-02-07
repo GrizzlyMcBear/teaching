@@ -1,4 +1,4 @@
-package eclipse.tests.exams.internal._2022_01_27.Question2;
+package tests.exams.internal._2022_01_27.Question2;
 
 import java.util.Arrays;
 

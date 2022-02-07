@@ -1,8 +1,8 @@
-package eclipse.teaching.java.adt.stack.questions.kobi.q_01;
+package teaching.java.adt.stack.questions.kobi.q_01;
 
 /**
  * 
- * @author Ronen Cohen
+ * @author Grizzly McBear
  * 
  * @implNote this question was authored by Kobi Suissa and could be found
  * <a href="https://docs.google.com/document/d/1KPUQBaA16m296SG6L7m4-c7B87tDjCuE3OyFcm1E10I/edit#heading=h.qmx3jib8lgl5">here</a>

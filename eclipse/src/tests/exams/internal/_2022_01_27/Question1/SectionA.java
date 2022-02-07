@@ -1,9 +1,9 @@
-package eclipse.tests.exams.internal._2022_01_27.Question1;
+package tests.exams.internal._2022_01_27.Question1;
 
 // TODO: add link to this exam's form.
 /**
  * This is the solution for the 1st sub-section of question 1 in the exam which took place on the 2022.01.27
- * @author Ronen Cohen
+ * @author Grizzly McBear
  */
 public class SectionA {
 	

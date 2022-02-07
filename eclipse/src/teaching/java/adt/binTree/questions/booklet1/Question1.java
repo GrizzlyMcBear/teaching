@@ -1,4 +1,4 @@
-package eclipse.teaching.java.adt.binTree.questions.booklet1;
+package teaching.java.adt.binTree.questions.booklet1;
 
 public class Question1 {
 	

@@ -30,22 +30,37 @@ import com.example.googlemapsandgps.databinding.ActivityMapsBinding;
 
 import java.util.List;
 
+/**
+ * This activity is part of an application which presents the topic of Google Maps.
+ * @implNote Here are several important notes to go over:
+ * <ol>
+ *     <li>This class implements the {@link OnMapReadyCallback} interface.</li>
+ * </ol>
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 	
 	private GoogleMap mMap;
 	private ActivityMapsBinding binding;
 	
-	//OnMapReadyCallback - interface that show the map when it ready.
 	TextView textView;
-	EditText editText, editText1,editText2;
+	EditText editText;
+	EditText editText1;
+	EditText editText2;
 	Button button1;
-	String titleString, snippetString;
+	String titleString;
+	String snippetString;
 	CheckBox checkBox;
 	boolean deleteMode = false;
 	
 	private boolean checkPermissions() {
 		return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
 				ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED;
+	}
+	
+	private void requestPermissions() {
+		ActivityCompat.requestPermissions(this,
+				new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
+				1);
 	}
 	
 	@SuppressLint("MissingPermission")
@@ -61,16 +76,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 				.findFragmentById(R.id.map);	// Connect to the map (resource) fragment.
 		mapFragment.getMapAsync(this);	// Listener for when the map resource is ready to be used.
 		
-		// Ask for fine and coarse location permissions from the user.
-		ActivityCompat.requestPermissions(this,
-				new String[] { Manifest.permission.ACCESS_FINE_LOCATION,
-						Manifest.permission.ACCESS_COARSE_LOCATION},
-				1);
+		requestPermissions();
 		
 		LocationManager lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 		if (checkPermissions()) {
-			// TODO: Consider calling
-			//    ActivityCompat#requestPermissions
+			// TODO: Consider calling ActivityCompat#requestPermissions (if it would assist the lesson).
 			// here to request the missing permissions, and then overriding
 			//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
 			//                                          int[] grantResults)
@@ -82,6 +92,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1000, this);
 	}
 	
+	/**
+	 * Create the dialog to add a point of interest.
+	 * @param latLng
+	 */
 	public void dialogCreator(LatLng latLng) {
 		final Dialog dialog = new Dialog(this);
 		dialog.setContentView(R.layout.dialog);
@@ -109,7 +123,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 	 * Manipulates the map once available.
 	 * This callback is triggered when the map is ready to be used.
 	 * This is where we can add markers or lines, add listeners or move the camera. In this case,
-	 * we just add a marker near Sydney, Australia.
+	 * we just add a marker for a special location.
 	 * If Google Play services is not installed on the device, the user will be prompted to install
 	 * it inside the SupportMapFragment. This method will only be triggered once the user has
 	 * installed Google Play services and returned to the app.
@@ -152,8 +166,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 	
 	@Override
 	public void onLocationChanged(@NonNull Location location) {
-		
-		if(location!=null) {
+		if (location != null) {
 			LatLng myLocation = new LatLng(location.getLatitude(), location.getLongitude());
 			//  mMap.addMarker(new MarkerOptions().position(myLocation).title("my location"));
 			mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));

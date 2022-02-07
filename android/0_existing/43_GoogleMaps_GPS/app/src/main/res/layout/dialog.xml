@@ -8,30 +8,39 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal">
+		
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Title: "/>
-		<EditText android:id="@+id/title"
+			android:text="Title: " />
+		
+		<EditText
+			android:id="@+id/title"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
+	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal">
+		
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Snippet: "/>
-		<EditText android:id="@+id/snippet"
+			android:text="Snippet: " />
+		
+		<EditText
+			android:id="@+id/snippet"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
-	<Button android:id="@+id/btn1"
+	
+	<Button
+		android:id="@+id/btn1"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:textAllCaps="false"
-		android:text="Save point"/>
-	
+		android:text="Save point"
+		android:textAllCaps="false" />
+
 </LinearLayout>

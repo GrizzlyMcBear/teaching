@@ -1,5 +1,9 @@
 package teaching.java.oop.inheritance.copy_constructor.points;
 
+/**
+ * This class represents a point in the 2 dimensional Cartesian space. 
+ * @author Grizzly McBear
+ */
 public class PointXY {
 
 	protected double x;

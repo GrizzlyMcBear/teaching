@@ -1,5 +1,10 @@
 package teaching.java.oop.inheritance.copy_constructor.points;
 
+/**
+ * This class represents a point in the 3 dimensional Cartesian space.
+ * @author Grizzly McBear
+ * @implSpec This class extends {@link PointXY}.
+ */
 public class PointXYZ extends PointXY {
 
 	private double z;

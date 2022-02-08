@@ -1,9 +1,11 @@
-package eclipse.tests.exams.internal.adt.stack.q_01;
+package tests.exams.internal.adt.stack.q_01;
 
 /**
  * This class creates a board game for the game "Snakes and Ladders" with further info in the {@link Question} class.
  * @author Ronen Cohen
  */
+// TODO: finish writing the code for this question's solution.
+// TODO: write testing code for this solution.
 public class BuildBoard {
 	
 	private static final Character CELL_SEPARATOR = ',';
@@ -31,13 +33,13 @@ public class BuildBoard {
 	}
 	
 	private void parseDescription() {
-		
-		String[] cellsDesc = getDescription().spli
+//		String[] cellsDesc = getDescription().spli
 	}
 	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		if (!isDescValid(description)) {
 			System.out.println("Input isn't valid");

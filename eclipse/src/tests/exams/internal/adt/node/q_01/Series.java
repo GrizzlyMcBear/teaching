@@ -1,7 +1,8 @@
-package eclipse.tests.exams.internal.adt.node.q_01;
+package tests.exams.internal.adt.node.q_01;
 
-import eclipse.utilities.adt.moe.Node;
+import utilities.adt.moe.Node;
 
+// TODO: make sure this question has both a working solution and code for testing.
 public class Series {
 	
 	private int duplication;

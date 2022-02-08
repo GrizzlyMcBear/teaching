@@ -1,21 +1,18 @@
-package eclipse.tests.exams.internal.adt.node.q_01;
+package tests.exams.internal.adt.node.q_01;
 
-import eclipse.utilities.adt.mine.Utilities;
-import eclipse.utilities.adt.moe.Node;
+import utilities.adt.mine.Utilities;
+import utilities.adt.moe.Node;
 
 /**
- * 
  * @author GrizzlyMcBear
- * 
  * @implNote This class contains my solution for 
  * <a href="https://docs.google.com/document/d/18H1zezsieuzGekiTb2MMEHNzYeYYYzbr4AKQZFc_o9Q/edit#heading=h.355112zdd0q2">this question</a>
- *
  */
+// TODO: make sure this question has both solution and code for testing.
 public class Question {
 
 	/**
 	 * @implSpec This is part 1 of the question.
-	 * 
 	 * @param pos
 	 * @return
 	 */

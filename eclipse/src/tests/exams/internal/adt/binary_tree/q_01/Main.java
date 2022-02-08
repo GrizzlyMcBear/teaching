@@ -1,4 +1,4 @@
-package eclipse.tests.exams.internal.adt.binary_tree.q_01;
+package tests.exams.internal.adt.binary_tree.q_01;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package eclipse.tests.exams.internal.adt.stack.q_01;
+package tests.exams.internal.adt.stack.q_01;
 
 /**
  * This is the solution for the "Snakes and Ladders" question which can be found
@@ -7,6 +7,8 @@ package eclipse.tests.exams.internal.adt.stack.q_01;
  */
 public class Question {
 
+	//TODO: implement this question's solution.
+	//TODO: implement testing methods for this solution.
 	public static void testQuestion() {
 		
 	}

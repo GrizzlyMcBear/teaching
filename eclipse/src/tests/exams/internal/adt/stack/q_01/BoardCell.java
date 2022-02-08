@@ -1,9 +1,11 @@
-package eclipse.tests.exams.internal.adt.stack.q_01;
+package tests.exams.internal.adt.stack.q_01;
 
 /**
  * This class represents a cell in the game "Snakes and Ladders" with further info in the {@link Question} class. 
  * @author Ronen Cohen
  */
+// TODO: finish writing the solution for this question.
+// TODO: write testing code for this question.
 public class BoardCell {
 	
 	private String content;

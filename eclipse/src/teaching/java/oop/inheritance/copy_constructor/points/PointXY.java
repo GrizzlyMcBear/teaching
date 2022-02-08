@@ -6,8 +6,14 @@ package teaching.java.oop.inheritance.copy_constructor.points;
  */
 public class PointXY {
 
+	/**
+	 * The x value of this point.
+	 */
 	protected double x;
 	
+	/**
+	 * The y value of this point.
+	 */
 	protected double y;
 
 	public double getX() {
@@ -26,12 +32,21 @@ public class PointXY {
 		this.y = y;
 	}
 	
+	/**
+	 * C'tor with {@link PointXY#x} and {@link PointXY#y} arguments.
+	 * @param x The {@link PointXY#x} value.
+	 * @param y The {@link PointXY#y} value.
+	 */
 	public PointXY(double x, double y) {
 		super();
 		setX(x);
 		setY(y);
 	}
 	
+	/**
+	 * A copy-constructor for this {@link PointXY}
+	 * @param other A {@link PointXY} argument.
+	 */
 	public PointXY(PointXY other) {
 		super();
 		setX(other.getX());

@@ -71,7 +71,7 @@ public class CounterService extends Service {
 		Log.d(TAG,"Inside `onStartCommand()`");
 		
 		counter = intent.getIntExtra("counter",10);
-//		startCounting(counter, TAG);
+		//startCounting(counter, TAG);
 		new CounterThread(counter).start();
 		
 		return super.onStartCommand(intent, flags, startId);

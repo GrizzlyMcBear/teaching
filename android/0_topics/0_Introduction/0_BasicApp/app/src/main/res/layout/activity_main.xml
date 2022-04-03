@@ -5,6 +5,24 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".MainActivity">
+	<!-- The layout file
+		 ===============
+		 	* This is the layout file, inside it we define our application's screens
+		 		for android.
+			* A layout file is an xml file (eXtensible Markup Language) with nodes.
+			* Generally speaking, each node might be a parent node (and contain child nodes)
+				or it could be regarded as a child-node to another parent node
+				(and have 0 or more sibling-nodes).
+			* We mark the nodes like so:
+				<ParentNode1>
+					<ChildNode1 attribute1="value" attribute2="value">
+						content
+					<ChildNode1/>
+					<ChildNode2>
+					<ChildNode2/>
+					<ContentlessChildNode3 attribute1="value" attribute3="value"/>
+				<ParentNode1/>
+	-->
 	
 	<TextView
 		android:layout_width="wrap_content"

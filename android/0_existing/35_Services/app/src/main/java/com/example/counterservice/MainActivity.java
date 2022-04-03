@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 	private void initData() {
 		intent = new Intent(this, CounterService.class);
 		intent.putExtra("counter",10);
+		intent.putExtra("kill_self",true);
 	}
 	
 	private void initWidgets() {

@@ -70,9 +70,13 @@ public class CounterService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d(TAG,"Inside `onStartCommand()`");
 		
-		counter = intent.getIntExtra("counter",10);
-		//startCounting(counter, TAG);
-		new CounterThread(counter).start();
+		if (intent.getBooleanExtra("kill_self", false)) {
+			stopSelf();
+		} else {
+			counter = intent.getIntExtra("counter",10);
+			//startCounting(counter, TAG);
+			new CounterThread(counter).start();
+		}
 		
 		return super.onStartCommand(intent, flags, startId);
 	}

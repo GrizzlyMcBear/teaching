@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+	
+	<Button android:id="@+id/increaseButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Increase"
+		android:textAllCaps="false"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<Button android:id="@+id/decreaseButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="63dp"
+		android:text="Decrease"
+		android:textAllCaps="false"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<Button android:id="@+id/attributeListenerButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/decreaseButton"
+		android:layout_marginTop="50dp"
+		android:onClick="attributeOnClick"
+		android:text="Attribute"
+		android:textAllCaps="false" />
+	
+	<Button android:id="@+id/anonymousObjectButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/attributeListenerButton"
+		android:layout_marginLeft="20dp"
+		android:layout_toRightOf="@+id/attributeListenerButton"
+		android:text="Anonymous"
+		android:textAllCaps="false" />
+	
+	<Button android:id="@+id/implementInterfaceButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/attributeListenerButton"
+		android:layout_marginLeft="20dp"
+		android:layout_toRightOf="@+id/anonymousObjectButton"
+		android:text="Interface"
+		android:textAllCaps="false" />
+
+</RelativeLayout>

@@ -13,20 +13,26 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.googlemapsandgps.databinding.ActivityMapsBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.List;
 
@@ -41,6 +47,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 	
 	private GoogleMap mMap;
 	private ActivityMapsBinding binding;
+	private final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+	private static final String KEY_CAMERA_POSITION = "camera_position";
+	private static final String KEY_LOCATION = "location";
+	private final float DEFAULT_ZOOM = 13;
+	private LatLng specialLocation;
+	private CameraPosition cameraPosition;
 	
 	TextView textView;
 	EditText editText;
@@ -51,16 +63,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 	String snippetString;
 	CheckBox checkBox;
 	boolean deleteMode = false;
+	boolean locationPermissionGranted = false;
+	private FusedLocationProviderClient fusedLocationProviderClient;
+	private Location lastKnownLocation;
 	
 	private boolean checkPermissions() {
 		return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
 				ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED;
 	}
-	
 	private void requestPermissions() {
 		ActivityCompat.requestPermissions(this,
 				new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
-				1);
+				PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 	}
 	
 	@SuppressLint("MissingPermission")
@@ -90,6 +104,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 		}
 		
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1000, this);
+		
+		// Construct a FusedLocationProviderClient.
+		fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+		
+		lastKnownLocation = savedInstanceState.getParcelable(KEY_LOCATION);
+		cameraPosition = savedInstanceState.getParcelable(KEY_CAMERA_POSITION);
+	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		if (mMap != null) {
+			outState.putParcelable(KEY_CAMERA_POSITION, mMap.getCameraPosition());
+			outState.putParcelable(KEY_LOCATION, lastKnownLocation);
+		}
+		super.onSaveInstanceState(outState);
+	}
+	
+	@Override
+	public void onRequestPermissionsResult(int requestCode,
+										   @NonNull String[] permissions,
+										   @NonNull int[] grantResults) {
+		locationPermissionGranted = false;
+		if (requestCode ==
+				PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {// If request is cancelled, the result arrays are empty.
+			if (grantResults.length > 0
+					&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				locationPermissionGranted = true;
+			}
+		} else {
+			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+//		updateLocationUI();
 	}
 	
 	/**
@@ -142,7 +188,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 		});
 		
 		// Add a marker in Sydney and move the camera
-		LatLng specialLocation = new LatLng(32.9036454, 35.2322266);
+		specialLocation = new LatLng(32.9036454, 35.2322266);
 		mMap.addMarker(new MarkerOptions().position(specialLocation).title("Marker @ special location"));
 		mMap.moveCamera(CameraUpdateFactory.newLatLng(specialLocation));
 		
@@ -162,6 +208,43 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 				return true;
 			}
 		});
+		
+		// Get the current location of the device and set the position of the map.
+		getDeviceLocation();
+	}
+	
+	private void getDeviceLocation() {
+		/*
+		 * Get the best and most recent location of the device, which may be null in rare
+		 * cases when a location is not available.
+		 */
+		try {
+			if (locationPermissionGranted) {
+				@SuppressLint("MissingPermission") Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
+				locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+					@Override
+					public void onComplete(@NonNull Task<Location> task) {
+						if (task.isSuccessful()) {
+							// Set the map's camera position to the current location of the device.
+							lastKnownLocation = task.getResult();
+							if (lastKnownLocation != null) {
+								mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+										new LatLng(lastKnownLocation.getLatitude(),
+												lastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+							}
+						} else {
+							Log.d("MapsActivityTag", "Current location is null. Using defaults.");
+							Log.e("MapsActivityTag", "Exception: %s", task.getException());
+							mMap.moveCamera(CameraUpdateFactory
+									.newLatLngZoom(specialLocation, DEFAULT_ZOOM));
+							mMap.getUiSettings().setMyLocationButtonEnabled(false);
+						}
+					}
+				});
+			}
+		} catch (SecurityException e)  {
+			Log.e("Exception: %s", e.getMessage(), e);
+		}
 	}
 	
 	@Override

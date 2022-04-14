@@ -9,7 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+/**
+ * @author Ronen Cohen
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+	/* todo: refactor this comment into the application
+		These are fields in the `MainActivity` class,
+        we use each one of them to control a different widget (View object) presented in our application. */
+		
 	/**
 	 * The fields which refer 2 button widgets in the layout.
 	 * @implNote We define fields (properties) referring the button widgets,
@@ -21,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	 */
 	Button anonymousObjectButton;
 	Button implementInterfaceButton;
-	
+
+	// todo: add documentation regarding method `findViewById` and connecting the widgets to the matching fields for this method (`initLayout`).
 	private void initLayout() {
 		setContentView(R.layout.activity_main);
 		

@@ -4,18 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * @author Ronen Cohen
+ */
 public class MainActivity extends AppCompatActivity {
 	
 	/**
-	 * @implNote Connect the local fields to the layout's widgets.
+	 * @implNote Connect the instance of this activity (the "business logic")
+	 *	to the matching layout or UI (User Interface).
 	 */
 	private void initLayout() {
 		setContentView(R.layout.activity_main);
 	}
 	
 	/**
-	 * This method gets called when an instance of this class is being created and before showing
-	 * the resulting "screen" to the user.
+	 * @implNote This method gets called when an instance of this class is being created
+	 *	and before showing any resulting "application screen" to the user.
 	 * @param savedInstanceState
 	 */
 	@Override

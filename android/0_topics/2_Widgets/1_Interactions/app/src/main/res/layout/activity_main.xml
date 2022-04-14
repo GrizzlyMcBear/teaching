@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".MainActivity">
+	<LinearLayout
+		style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout"
+		android:layout_marginTop="20dp"
+		android:orientation="vertical">
+		<TextView
+			style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView.Title"
+			android:text="@string/input_section"/>
+		<LinearLayout
+			style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout"
+			android:orientation="vertical">
+			<LinearLayout
+				style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout">
+				<TextView
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget"
+					android:text="@string/username_textview"/>
+				<!-- The `android:text` is the attribute which sets the text of the widget,
+					in case an `EditText` widget has no text, android would set it's text to be
+					the value in the `android:hint` attribute. -->
+				<EditText android:id="@+id/usernameInput"
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget"
+					android:hint="@string/username_edittext"/>
+			</LinearLayout>
+			<LinearLayout
+				style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout">
+				<TextView
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget"
+					android:text="@string/phone_textview"/>
+				<EditText android:id="@+id/phoneInput"
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget"
+					android:hint="@string/username_edittext"/>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout"
+		android:layout_marginTop="20dp"
+		android:orientation="vertical">
+		<TextView
+			style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView.Title"
+			android:text="@string/buttons_section"/>
+		<LinearLayout
+			style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout">
+			<Button android:id="@+id/updateNameButton"
+				style="@style/Theme.MultiWidgetInteractions.Base.Widget.Button"
+				android:text="@string/update_name"/>
+			<Button android:id="@+id/updatePhoneButton"
+				style="@style/Theme.MultiWidgetInteractions.Base.Widget.Button"
+				android:text="@string/update_phone"/>
+			<Button android:id="@+id/updateAllButton"
+				style="@style/Theme.MultiWidgetInteractions.Base.Widget.Button"
+				android:text="@string/update_all"/>
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout"
+		android:layout_marginTop="20dp"
+		android:orientation="vertical">
+		<TextView
+			style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView.Title"
+			android:text="@string/updated_text_section"/>
+		<LinearLayout
+			style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout"
+			android:orientation="vertical">
+			<LinearLayout
+				style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout">
+				<TextView
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView"
+					android:text="@string/username_textview"/>
+				<TextView android:id="@+id/nameDisplay"
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView"
+					android:hint="@string/no_value_yet"/>
+			</LinearLayout>
+			<LinearLayout
+				style="@style/Theme.MultiWidgetInteractions.Base.LinearLayout">
+				<TextView
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView"
+					android:text="@string/phone_textview"/>
+				<TextView android:id="@+id/phoneDisplay"
+					style="@style/Theme.MultiWidgetInteractions.Base.Widget.TextView"
+					android:hint="@string/no_value_yet"/>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

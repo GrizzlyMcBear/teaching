@@ -70,5 +70,53 @@ namespace Introduction {
 			// נחזיר את ממוצע הנגיפים בדגימות
 			return avgVirusAmount;
 		}
+	
+		/// <summary>
+		/// טענת כניסה: ראו את שורת החתימה של הפעולה
+		/// טענת יציאה: הפעולה קוראת 1,000,000 ערכי דגימת נגיפים, מחשבת את הממוצע שלהם,
+		/// מדפיסה את כמות הדגימות עם ערכים מעל לממוצע ומחזירה את ממוצע הדגימות
+		/// </summary>
+		/// <returns></returns>
+		public static double getAvgVirusPrintAmountAboveWithArray() {
+			int totalVirusAmount = 0;
+			int[] virusSamples = new int[1000000];
+			double avgVirusAmount = 0.0;
+			int samplesAboveAvgAmount = 0;
+
+			// נקלוט את הערכים
+			Console.WriteLine("Please enter the virus amount in 1,000,000 samples:");
+			for (int i = 0; i < 1000000; i++) {
+				Console.Write("Sample #" + (i + 1) + ": ");
+				virusSamples[i] = int.Parse(Console.ReadLine());// שוב נתעלם מבדיקת תקינות הקלט
+				totalVirusAmount += virusSamples[i];
+			}
+
+			// נחשב את הממוצע
+			avgVirusAmount = (double)totalVirusAmount / 1000000;
+
+			// נחשב ונדפיס כמה דגימות עם ערכים מעל לממוצע
+			for (int i = 0; i < 1000000, i++) {
+				if (virusSamples[i] > avgVirusAmount)
+					samplesAboveAvgAmount++;
+			}
+			Console.WriteLine("Samples above average: " + samplesAboveAvgAmount);
+
+			// נחזיר את כמות הנגיפים הממוצעת בבדיקה
+			return avgVirusAmount;
+		}
+
+		public static void defineArray1() {
+			// נגדיר מערך באורך של מספר קבוע
+			int[] array = new int[10];
+		}
+		public static void defineArray2() {
+			// נגדיר מערך באורך של משתנה
+			int size = 10;
+			double[] array = new double[size];
+		}
+		public static void defineArray3() {
+			// נגדיר מערך תוך כדי איפוס שלו
+			bool[] array = { false, true, true, false, true };
+		}
 	}
 }

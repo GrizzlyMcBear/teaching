@@ -105,6 +105,8 @@ namespace Introduction {
 			return avgVirusAmount;
 		}
 
+		#region Array Definition Methods
+
 		public static void defineArray1() {
 			// נגדיר מערך באורך של מספר קבוע
 			int[] array = new int[10];
@@ -118,5 +120,8 @@ namespace Introduction {
 			// נגדיר מערך תוך כדי איפוס שלו
 			bool[] array = { false, true, true, false, true };
 		}
+
+		#endregion Array Definition Methods
+
 	}
 }

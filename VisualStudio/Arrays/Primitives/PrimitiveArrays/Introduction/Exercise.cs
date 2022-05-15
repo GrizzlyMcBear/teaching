@@ -10,7 +10,7 @@ namespace Introduction {
 		/// טענת יציאה: הפעולה מחזירה מערך המכיל מספרים שלמים וחיוביים בערכים ובכמות שהוגדרו ע"י המשתמש
 		/// </summary>
 		/// <returns></returns>
-		public static int[] getIntArray() {
+		public static int[] GetIntArray() {
 			int[] result;
 
 			Console.Write("Please enter the amount of numbers: ");
@@ -30,7 +30,7 @@ namespace Introduction {
 		/// </summary>
 		/// <param name="numbers"></param>
 		/// <returns></returns>
-		public static int maxNum(int[] numbers) {
+		public static int MaxNum(int[] numbers) {
 			int maxNum = -1;
 			if (numbers == null) {
 				Console.WriteLine("The given array wasn't defined!");

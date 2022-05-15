@@ -7,13 +7,13 @@ namespace Introduction {
 			//double avgAmount = getAverageVirusAmount();
 			//Console.WriteLine("The average amount of viruses is: " + avgAmount);
 
-			int[] intArr = Exercise.getIntArray();
+			int[] intArr = Exercise.GetIntArray();
 			// Exercise 1
 			//int maxInt = Exercise.maxNum(intArr);
 			//Console.WriteLine("Maximum number is: {0}", maxInt);
 
 			// IndexOutOfRangeException
-			minNumFindIssue(intArr);
+			MinNumFindIssue(intArr);
 		}
 
 		/// <summary>
@@ -21,7 +21,7 @@ namespace Introduction {
 		/// טענת יציאה: הפעולה קוראת 4 ערכי דגימת נגיפים, מחשבת את הממוצע שלהם ומחזירה אותו
 		/// </summary>
 		/// <returns></returns>
-		public static double getAverageVirusAmount() {
+		public static double GetAverageVirusAmount() {
 			int totalVirusAmount = 0;
 			int currVirusAmount = 0;
 
@@ -47,7 +47,7 @@ namespace Introduction {
 		/// מדפיסה את כמות הדגימות עם ערך מעל הממוצע ומחזירה את הממוצע
 		/// </summary>
 		/// <returns></returns>
-		public static double getAvgVirusPrintAmountAbove() {
+		public static double GetAvgVirusPrintAmountAbove() {
 			int sample1Amount = 0;
 			int sample2Amount = 0;
 			int sample3Amount = 0;
@@ -86,7 +86,7 @@ namespace Introduction {
 		/// מדפיסה את כמות הדגימות עם ערכים מעל לממוצע ומחזירה את ממוצע הדגימות
 		/// </summary>
 		/// <returns></returns>
-		public static double getAvgVirusPrintAmountAboveWithArray() {
+		public static double GetAvgVirusPrintAmountAboveWithArray() {
 			int totalVirusAmount = 0;
 			int[] virusSamples = new int[1000000];
 			double avgVirusAmount = 0.0;
@@ -116,21 +116,21 @@ namespace Introduction {
 
 		#region Array Definition Methods
 
-		public static void defineArray1() {
+		public static void DefineArray1() {
 			// נגדיר מערך באורך של מספר קבוע
 			int[] array = new int[10];
 		}
-		public static void defineArray2() {
+		public static void DefineArray2() {
 			// נגדיר מערך באורך של משתנה
 			int size = 10;
 			double[] array = new double[size];
 		}
-		public static void defineArray3() {
+		public static void DefineArray3() {
 			// נגדיר מערך תוך כדי איפוס שלו
 			bool[] array = { false, true, true, false, true };
 		}
 
-		public static void defineArray4() {
+		public static void DefineArray4() {
 			// נגדיר משתנה המצביע על מערך
 			long[] array;
 
@@ -147,7 +147,7 @@ namespace Introduction {
 		/// ובמידה ואפשר - גם לתקן את הפעולה.
 		/// </summary>
 		/// <param name="numbers"></param>
-		public static void minNumFindIssue(int[] numbers) {
+		public static void MinNumFindIssue(int[] numbers) {
 			if (numbers == null || numbers.Length == 0) {
 				Console.WriteLine("Invalid input");
 				return;

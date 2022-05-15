@@ -17,7 +17,7 @@ namespace Introduction {
 			result = new int[int.Parse(Console.ReadLine())];
 
 			for (int i = 0; i < result.Length; i++) {
-				Console.Write("Enter number #{0}", i+1);
+				Console.Write("Enter number #{0}: ", i+1);
 				result[i] = int.Parse(Console.ReadLine());
 			}
 

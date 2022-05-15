@@ -3,8 +3,17 @@
 namespace Introduction {
 	public class Program {
 		public static void Main(string[] args) {
-			double avgAmount = getAverageVirusAmount();
-			Console.WriteLine("The average amount of viruses is: " + avgAmount);
+			// PowerPoint Question 1
+			//double avgAmount = getAverageVirusAmount();
+			//Console.WriteLine("The average amount of viruses is: " + avgAmount);
+
+			int[] intArr = Exercise.getIntArray();
+			// Exercise 1
+			//int maxInt = Exercise.maxNum(intArr);
+			//Console.WriteLine("Maximum number is: {0}", maxInt);
+
+			// IndexOutOfRangeException
+			minNumFindIssue(intArr);
 		}
 
 		/// <summary>
@@ -95,7 +104,7 @@ namespace Introduction {
 			avgVirusAmount = (double)totalVirusAmount / 1000000;
 
 			// נחשב ונדפיס כמה דגימות עם ערכים מעל לממוצע
-			for (int i = 0; i < 1000000, i++) {
+			for (int i = 0; i < 1000000; i++) {
 				if (virusSamples[i] > avgVirusAmount)
 					samplesAboveAvgAmount++;
 			}
@@ -121,7 +130,38 @@ namespace Introduction {
 			bool[] array = { false, true, true, false, true };
 		}
 
+		public static void defineArray4() {
+			// נגדיר משתנה המצביע על מערך
+			long[] array;
+
+			// נאתחל אותו
+			array = new long[42];
+		}
+
 		#endregion Array Definition Methods
 
+		#region Array Exceptions
+
+		/// <summary>
+		/// פעולה זו מכילה בעיה בקוד, נסו למצוא אותה ללא הרצה שלו
+		/// ובמידה ואפשר - גם לתקן את הפעולה.
+		/// </summary>
+		/// <param name="numbers"></param>
+		public static void minNumFindIssue(int[] numbers) {
+			if (numbers == null || numbers.Length == 0) {
+				Console.WriteLine("Invalid input");
+				return;
+			}
+
+			int minNum = numbers[0];
+			for (int i = 1; i <= numbers.Length; i++) {
+				if (numbers[i] < minNum)
+					minNum = numbers[i];
+			}
+
+			Console.WriteLine("Minimum number is {0}", minNum);
+		}
+
+		#endregion Array Exceptions
 	}
 }

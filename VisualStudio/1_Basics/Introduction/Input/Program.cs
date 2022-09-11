@@ -9,15 +9,32 @@ namespace Input {
 		public static void Main(string[] args) {
 			ReadAndPrintInput();
 			ReadAndPrintManipulatedAge();
+			ReadAndPrintFormattedAge();
 		}
-
+		/// <summary>
+		/// This method asks the user for input and prints it.
+		/// </summary>
 		public static void ReadAndPrintInput() {
+			// Print the request for the user
 			Console.Write("Please enter your input: ");
+
+			/* Call `Console.ReadLine()` to read the user's input,
+			 * then store it inside a string variable called `userInput` */
 			string userInput = Console.ReadLine();
+
+			/* Print an informative message with the user's age -
+			 * combine (concatenate) the two together */
 			Console.WriteLine("This is the user's input: " + userInput);
 		}
-
 		public static void ReadAndPrintManipulatedAge() {
+			Console.Write("Please enter your age: ");
+			string userInput = Console.ReadLine();
+			int userAge = Convert.ToInt32(userInput);
+			Console.WriteLine("Your age is: " + userAge + ", next year you'll be " +
+				(userAge + 1) + " years old.");
+		}
+
+		public static void ReadAndPrintFormattedAge() {
 			Console.Write("Please enter your age: ");
 			string userInput = Console.ReadLine();
 			int userAge = Convert.ToInt32(userInput);

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelloWorld {
-	public class Program {
+namespace FirstProgram {
+	public class FirstProgram {
 		public static void Main(string[] args) {
 			Console.WriteLine("Hello World!");
 

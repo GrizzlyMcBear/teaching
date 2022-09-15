@@ -5,12 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Input {
-	public class Program {
+	public class InputProgram {
 		public static void Main(string[] args) {
-			ReadAndPrintInput();
-			ReadAndPrintManipulatedAge();
-			ReadAndPrintFormattedAge();
+			// Printing content to the console window
+			Console.Write("This string would be printed in the console.");
+
+			// Printing content and then descending to the next line
+			Console.WriteLine("This is another string.");
+
+			// Concatenating items and printing them to the console
+			Console.WriteLine("The result of 3 * 15 is " + (3 * 15));
 		}
+
 		/// <summary>
 		/// This method asks the user for input and prints it.
 		/// </summary>

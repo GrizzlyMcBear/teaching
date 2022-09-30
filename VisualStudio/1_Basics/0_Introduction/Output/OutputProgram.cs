@@ -10,6 +10,7 @@ namespace Output {
 			OutputMethods();
 			PrintingValues();
 			PrintingResults();
+			FormattingOutput();
 		}
 		public static void OutputMethods() {
 			Console.WriteLine("This command prints text and descends 1 line.");
@@ -44,6 +45,12 @@ namespace Output {
 			// In order to do the same correctly, we'll use parenthesis
 			Console.WriteLine("Next year I'll be " + (13 + 1));
 			Console.WriteLine("Twice my age is " + (13 * 2));
+		}
+		public static void FormattingOutput() {
+			int userAge = 21;
+			string userOutput = String.Format("We can duplicate your age:{0} and get: {1}, then use your age again: {0} and again: {0} and so on and so forth...",
+				userAge, userAge * 2);
+			Console.WriteLine(userOutput);
 		}
 	}
 }

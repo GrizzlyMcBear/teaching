@@ -7,50 +7,44 @@ using System.Threading.Tasks;
 namespace Input {
 	public class InputProgram {
 		public static void Main(string[] args) {
-			// Printing content to the console window
-			Console.Write("This string would be printed in the console.");
-
-			// Printing content and then descending to the next line
-			Console.WriteLine("This is another string.");
-
-			// Concatenating items and printing them to the console
-			Console.WriteLine("The result of 3 * 15 is " + (3 * 15));
+			//ReadingString();
+			ReadingInt();
+			//ReadingOtherVariables();
 		}
 
-		/// <summary>
-		/// This method asks the user for input and prints it.
-		/// </summary>
-		public static void ReadAndPrintInput() {
-			// Print the request for the user
-			Console.Write("Please enter your input: ");
+		public static void ReadingString() {
+			Console.Write("Please enter your first name: ");
+			string userFirstName = Console.ReadLine();
+			Console.Write("Please enter your last name: ");
+			string userLastName = Console.ReadLine();
 
-			/* Call `Console.ReadLine()` to read the user's input,
-			 * then store it inside a string variable called `userInput` */
-			string userInput = Console.ReadLine();
-
-			/* Print an informative message with the user's age -
-			 * combine (concatenate) the two together */
-			Console.WriteLine("This is the user's input: " + userInput);
+			Console.WriteLine("Greetings " + userLastName + " " + userFirstName);
 		}
-		public static void ReadAndPrintManipulatedAge() {
+		public static void ReadingInt() {
 			Console.Write("Please enter your age: ");
-			string userInput = Console.ReadLine();
-			int userAge = Convert.ToInt32(userInput);
-			Console.WriteLine("Your age is: " + userAge + ", next year you'll be " +
-				(userAge + 1) + " years old.");
+			string userAgeStr = Console.ReadLine();
+
+			// Now convert the input into the desired type
+			int userAge = int.Parse(userAgeStr);
+
+			Console.WriteLine("Last year you were " + (userAge - 1) + " years old");
 		}
+		public static void ReadingOtherVariables() {
+			Console.Write("Enter a double: ");
+			string doubleInput = Console.ReadLine();
 
-		public static void ReadAndPrintFormattedAge() {
-			Console.Write("Please enter your age: ");
-			string userInput = Console.ReadLine();
-			int userAge = Convert.ToInt32(userInput);
+			Console.Write("Enter a char: ");
+			string charInput = Console.ReadLine();
 
-			string userOutput = "Your age is: " + userAge;
-			Console.WriteLine(userOutput);
+			Console.Write("Enter a bool: ");
+			string boolInput = Console.ReadLine();
 
-			userOutput = String.Format("We can also duplicate your age ({0}) and get ({1})",
-				userAge, userAge * 2);//, userAge + 1);
-			Console.WriteLine(userOutput);
+			// Now convert and print those inputs
+			double doubleValue = double.Parse(doubleInput);
+			char charValue = char.Parse(charInput);
+			bool boolValue = bool.Parse(boolInput);
+			Console.WriteLine("Your double is: " + doubleValue + ", your char is: " + charValue +
+				", and your bool is: " + boolValue);
 		}
 	}
 }

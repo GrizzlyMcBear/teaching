@@ -8,7 +8,12 @@ using System.Threading.Tasks;
 namespace ProgramsCode {
 	public class Program {
 		public static void Main(string[] args) {
+			bool c = true;
+			int a = 0, b = 0, x = 0;
+
 			
+
+
 		}
 	}
 }

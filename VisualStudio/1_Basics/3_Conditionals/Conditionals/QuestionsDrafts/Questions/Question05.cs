@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuestionsDrafts.Questions {
+namespace QuestionsSolutions.Questions {
 	public class Question05 {
 		private static int firstNumber;
 		private static int secondNumber;

@@ -21,52 +21,69 @@ namespace Introduction.QuestionsSolutions {
 
 		private static void Solution() {
 			PrintHeaders();
-			PrintFollowupTableLine(0, highest1, highest2, highest3, "Undefined", finestSum, finestAmount, "Undefined");
+			PrintFollowupTableLine(0, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, " Undefined ");
 			for (int i = 0; i < grades; i++) {
-				PrintFollowupTableLine(1, highest1, highest2, highest3, "Undefined", finestSum, finestAmount, i.ToString());
+				PrintFollowupTableLine(1, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, "\t" + i.ToString());
 
 				int currGrade = random.Next(0, 101);
-				PrintFollowupTableLine(2, highest1, highest2, highest3, currGrade.ToString(), finestSum, finestAmount, i.ToString());
+				PrintFollowupTableLine(2, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 				
-				PrintFollowupTableLine(2, highest1, highest2, highest3, currGrade.ToString(), finestSum, finestAmount, i.ToString());
 
 				if (currGrade >= 90) {
+					PrintFollowupTableLine(3, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					finestAmount++;
+					PrintFollowupTableLine(4, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					finestSum += currGrade;
+					PrintFollowupTableLine(5, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 				}
 
 				if (highest1 < currGrade) {
+					PrintFollowupTableLine(6, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					highest3 = highest2;
+					PrintFollowupTableLine(7, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					highest2 = highest1;
+					PrintFollowupTableLine(8, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					highest1 = currGrade;
+					PrintFollowupTableLine(9, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 				} else if (highest2 < currGrade) {
+					PrintFollowupTableLine(10, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					highest3 = highest2;
+					PrintFollowupTableLine(11, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					highest2 = currGrade;
+					PrintFollowupTableLine(12, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 				} else if (highest3 < currGrade) {
+					PrintFollowupTableLine(13, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 					highest3 = currGrade;
+					PrintFollowupTableLine(14, highest1, highest2, highest3, currGrade.ToString() + "\t\t", finestSum, finestAmount, "\t" + i.ToString());
 				}
 			}
 
 			if (finestAmount == 0) {
+				PrintFollowupTableLine(15, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, " Undefined ");
 				Console.WriteLine("No fine grades.");
+				PrintFollowupTableLine(16, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, " Undefined ");
 			} else {
+				PrintFollowupTableLine(17, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, " Undefined ");
 				Console.WriteLine("Finest average is: " + (1.0 * finestSum / finestAmount));
+				PrintFollowupTableLine(18, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, " Undefined ");
 			}
 
 			Console.WriteLine("Highest 1st = " + highest1 + 
 				" Highest 2nd = " + highest2 +
 				" Highest 3rd = " + highest3);
+			PrintFollowupTableLine(19, highest1, highest2, highest3, "Undefined   ", finestSum, finestAmount, " Undefined ");
 		}
 
 		private static void PrintHeaders() {
-			Console.WriteLine("  # Command    | Highest Grade | 2nd Highest Grade | 3rd Highest Grade | Current Grade | Finest Grades Sum | Finest Students Amount |    i    ");
-			Console.WriteLine("==============================================================================================================================================");
+			Console.WriteLine("  # Command\t| Highest Grade | 2nd High Grade | 3rd High Grade | Curr Grade  | Finest Grades Sum\t| Finest Students Amount |    i\t\t |");
+			Console.WriteLine("==================================================================================================================================================");
 		}
 
 		private static void PrintFollowupTableLine(int command, int highestGrade1, int highestGrade2, int highestGrade3, 
 			string currGrade, int finestSum, int finestAmount, string i) {
-			Console.WriteLine(String.Format("  {0}    | {1} | {2} | {3} | {4} | {5} |    {6}    | {7} | {8} ", command, highestGrade1, highestGrade2, highestGrade3, currGrade, finestSum, finestAmount, i));
-			Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------");
+			Console.WriteLine(String.Format("\t{0}\t|\t{1}\t|\t{2}\t |\t{3}\t  | {4}|\t{5}\t\t|\t{6}\t\t |{7}\t |", 
+				command, highestGrade1, highestGrade2, highestGrade3, currGrade, finestSum, finestAmount, i));
+			Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------");
 		}
 	}
 }

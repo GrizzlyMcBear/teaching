@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Introduction {
 	public class Program {
 		public static void Main(string[] args) {
-			Question04.TestSolution();
+			Question03.TestSolution();
 		}
 
 		private static void CalculateProductsSum() {

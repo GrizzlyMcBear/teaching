@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Node {
-	internal class Student {
+	public class Student {
 		private int age;
 		private string name;
 

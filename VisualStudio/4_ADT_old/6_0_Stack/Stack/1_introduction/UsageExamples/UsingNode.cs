@@ -10,10 +10,14 @@ namespace _1_introduction.UsageExamples {
 		public static void IntegersStack() {
 			ADT.Stack<int> intStack = new ADT.Stack<int>();
 
-			Console.WriteLine("intStack: " + intStack.ToString());
-			intStack.Push(4);
+			Console.WriteLine("Stack emptiness situation: " + intStack.IsEmpty());
 
 			Console.WriteLine("intStack: " + intStack.ToString());
+			
+			intStack.Push(4);
+			Console.WriteLine("Stack emptiness situation: " + intStack.IsEmpty());
+			Console.WriteLine("intStack: " + intStack.ToString());
+
 			intStack.Push(3);
 			intStack.Push(10);
 

@@ -1,4 +1,4 @@
-package teaching.java.classes.HashMap;
+package teaching.java.classes.HashMap.helpers.keys;
 
 public class Dog extends Animal {
     private String furColor;

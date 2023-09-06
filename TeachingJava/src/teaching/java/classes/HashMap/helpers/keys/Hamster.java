@@ -1,4 +1,4 @@
-package teaching.java.classes.HashMap;
+package teaching.java.classes.HashMap.helpers.keys;
 
 public class Hamster extends Animal {
     private String likedFood;

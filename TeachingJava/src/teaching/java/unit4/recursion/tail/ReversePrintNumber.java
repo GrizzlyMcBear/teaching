@@ -1,26 +1,26 @@
 package teaching.java.unit4.recursion.tail;
 
-public class ReversePrint {
-    public static String iterativeSolutionReturn(int number) {
+public class ReversePrintNumber {
+    public static String iterativeReturn(int number) {
         // Initialize variables
         int copy = number;
-        int digitsAmount = 0;
+        int digitsAmount = 1;
 
         // Find amount of digits
-        for (; copy != 0; digitsAmount++) {
+        for (; copy >= 10; digitsAmount++) {
             copy /= 10;
         }
 
         // Copy digits into newly created array
         int[] digits = new int[digitsAmount];
-        for (int i = digitsAmount - 1; i >= 0; i--) {
+        for (int i = 0; i < digitsAmount; i++) {
             digits[i] = number % 10;
             number /= 10;
         }
 
         // Print the number
-        String output = "";
-        for (int i = 0; i < digitsAmount; i++) {
+        String output = digits[0] + "";
+        for (int i = 1; i < digitsAmount; i++) {
             output += digits[i];
         }
 
@@ -28,7 +28,7 @@ public class ReversePrint {
         return output;
     }
 
-    public static void iterativeSolutionPrint(int number) {
+    public static void iterativePrint(int number) {
         // Initialize variables
         int copy = number;
         int digitsAmount = 0;
@@ -54,13 +54,22 @@ public class ReversePrint {
         System.out.print(output);
     }
 
-    public static String recursiveSolutionPrint(int number) {
+    public static void recursivePrint(int number) {
         // Stopping condition
         if (number < 10) {
             System.out.print(number);
         } else {
             System.out.print(number % 10);
-            recursiveSolutionPrint(number / 10);
+            recursivePrint(number / 10);
+        }
+    }
+
+    public static String recursiveReturn(int number) {
+        // Stopping condition
+        if (number < 10) {
+            return "" + number;
+        } else {
+            return "" + (number % 10) + recursiveReturn(number / 10);
         }
     }
 }

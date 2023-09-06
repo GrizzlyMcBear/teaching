@@ -1,21 +1,26 @@
 package teaching.java.classes.HashMap.helpers.values;
 
 public class Instrument {
-    private String name;
+    private String color;
 
-    public Instruments() {
+    public Instrument() {
         this("N/A");
     }
 
-    public Instruments(String name) {
-        this.name = name;
+    public Instrument(String color) {
+        this.color = color;
     }
 
-    public String getName() {
-        return name;
+    public String getColor() {
+        return color;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Instrument (color: %s)", getColor());
     }
 }

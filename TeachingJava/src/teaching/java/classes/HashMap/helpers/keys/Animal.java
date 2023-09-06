@@ -1,4 +1,4 @@
-package teaching.java.classes.HashMap;
+package teaching.java.classes.HashMap.helpers.keys;
 
 public class Animal {
     private String name;

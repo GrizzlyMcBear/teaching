@@ -1,4 +1,4 @@
-package teaching.java.unit1_2.array.multidim.objects;
+package teaching.java.unit1_2.array.multidim.objects.carsMatrix;
 
 public class Car {
 
@@ -53,6 +53,8 @@ public class Car {
     }
 
     // Other methods
+    //@Override
+    //public String toString(int faux) {
     public String toString() {
         return String.format("Brand: %s, Price: $%f, License number: %s", getBrand(), getPrice(), getLicense());
     }

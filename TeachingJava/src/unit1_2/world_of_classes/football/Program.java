@@ -1,6 +1,6 @@
 package unit1_2.world_of_classes.football;
 
-public class ProgramWithoutClasses {
+public class Program {
     public static void main(String[] args) {
 
 
